@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Posts | {{ block.super }} {% endblock title %}</title>
+</head>
+<body>
+{% block content %}
+{% for post in post_list %}
+    <a href="{{ post.get_absolute_url }}">{{post.title|title|linebreaks }}</a>
+{% endfor %}
+<!--pagination-->
+
+{%  endblock content%}
+</body>
+</html>

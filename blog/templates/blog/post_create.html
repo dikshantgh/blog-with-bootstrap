@@ -1,0 +1,19 @@
+<!--blog/post_create.html-->
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Posts Create | {{ block.super }} {% endblock title %}</title>
+</head>
+<body>
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit">Create</button>
+</form>
+{%  endblock content%}
+</body>
+</html>
